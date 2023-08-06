@@ -26,4 +26,8 @@ masonlspconfig.setup_handlers {
     ["rust_analyzer"] = function ()
         require("rust-tools").setup {}
     end
+
+   -- ["pyright"] = function ()
+     --   require("black").setup {}
+    --end
 }

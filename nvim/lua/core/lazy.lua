@@ -109,6 +109,14 @@ lazy.setup({
       'neovim/nvim-lspconfig',
     },
 
+    -- Github Co-pilot
+    {
+      'github/copilot.vim',
+    },
+    --Leetcode
+    {
+      'ianding1/leetcode.vim',
+    },
     -- Autocomplete
     {
       'hrsh7th/nvim-cmp',

@@ -12,3 +12,8 @@ require('plugins/nvim-cmp')
 require('plugins/nvim-treesitter')
 require('plugins/alpha-nvim')
 require('plugins/mason-nvim')
+require('plugins/copilot')
+require('plugins/leetcode')
+
+let leetcode_browser = 'firefox';
+let leetcode_solution_filetype = 'cpp' ;
