@@ -1,12 +1,15 @@
 local plugins = {
 	{
 		"neovim/nvim-lspconfig",
-
+    config = function ()
+      require("custom.configs.lspconfig")
+      require("plugins.configs.lspconfig")
+    end,
 		dependencies = {
 			"jose-elias-alvarez/null-ls.nvim",
 			config = function()
 				require("plugins.configs.lspconfig")
-				-- require "custom.configs.lspconfig"
+		  	require("custom.configs.lspconfig")
 				require("custom.configs.null-ls")
 			end,
 		},
@@ -20,16 +23,15 @@ local plugins = {
 		},
 	},
 	{
-		"github/copilot.vim",
-		cmd = { "Copilot", "CopilotLine", "Copilot setup" },
-    lazy= false
-		-- enable co pilot for suggestions in insert mode
+		"williamboman/mason-lspconfig.nvim",
 	},
 	{
-		"ianding1/leetcode.vim",
+		"github/copilot.vim",
+		cmd = { "Copilot", "CopilotLine", "Copilot setup" },
+		lazy = false,
+		-- enable co pilot for suggestions in insert mode
 	},
 }
-require('custom.plugins.null-ls')
-require('custom.plugins.leetcode')
-require('custom.plugins.copilot')
+require("custom.plugins.copilot")
+
 return plugins
