@@ -1,5 +1,5 @@
 local present,copilot = pcall(require,"nvim-copilot")
-if not copilot_status then
+if not present then
   return
 end
 copilot.setup({

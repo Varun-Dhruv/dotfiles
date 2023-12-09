@@ -1,7 +1,7 @@
 ---@type ChadrcConfig 
  local M = {}
  M.ui = {
-  theme = 'catppuccin',
+  theme = 'github_dark',
   nvdash = {
     load_on_startup = true,
 

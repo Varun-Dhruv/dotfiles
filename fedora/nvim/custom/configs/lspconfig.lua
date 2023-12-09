@@ -2,28 +2,39 @@ local configs = require("plugins.configs.lspconfig")
 local on_attach = configs.on_attach
 local capabilities = configs.capabilities
 local lspconfig = require("lspconfig")
-local servers = { "html", "cssls", "bashls", "emmet_ls", "clangd", "pyright"}
-	for _, lsp in ipairs(servers) do
-		lspconfig[lsp].setup({
-			on_attach = on_attach,
-			capabilities = capabilities,
-		})
-	end
+local servers =
+	{ "html", "cssls", "bashls", "emmet_ls", "clangd", "pyright", "dockerls", "docker_compose_language_service" }
+for _, lsp in ipairs(servers) do
+	lspconfig[lsp].setup({
+		on_attach = on_attach,
+		capabilities = capabilities,
+	})
+end
 
-	lspconfig.tsserver.setup({
-		on_attach = on_attach,
-		capabilities = capabilities,
-		init_options = {
-			preferences = {
-				disableSuggestions = true,
-			},
+lspconfig.tsserver.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	init_options = {
+		preferences = {
+			disableSuggestions = true,
 		},
-	})
-	lspconfig.pyright.setup({
-		on_attach = on_attach,
-		capabilities = capabilities,
-		filetypes = { "python" },
-	})
+	},
+})
+lspconfig.pyright.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	filetypes = { "python" },
+})
+--   lspconfig.docker-file-language-server.setup({
+--    on_attach = on_attach,
+--    capabilities = capabilities,
+--    filetypes = {"dockerfile"},
+--   })
+--   lspconfig.docker-compose-language-service.setup({
+--    on_attach = on_attach,
+--    capabilities = capabilities,
+--    filetypes = {"yml"},
+-- })
 
 -- local on_attach = require("plugins.configs.lspconfig").on_attach
 -- local capabilities = require("plugins.configs.lspconfig").capabilities

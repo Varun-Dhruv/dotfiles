@@ -9,6 +9,7 @@ local sources = {
   formatting.eslint_d,
   formatting.black,
 	lint.shellcheck,
+  lint.yamllint
 }
 null_ls.setup({
 	debug = true,
