@@ -1,0 +1,15 @@
+# Secrets / environment
+.env
+.env.*
+*.secret
+
+# Shell history
+.zsh_history
+
+# Neovim temporary files
+*.swp
+*.swo
+*.tmp
+
+# OS/editor
+.DS_Store

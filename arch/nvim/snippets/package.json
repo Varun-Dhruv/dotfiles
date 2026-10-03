@@ -1,0 +1,12 @@
+{
+  "name": "custom-snippets",
+  "description": "Custom user snippets for Neovim",
+  "contributes": {
+    "snippets": [
+      {
+        "language": "cpp",
+        "path": "./cpp.json"
+      }
+    ]
+  }
+}

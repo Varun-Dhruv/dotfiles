@@ -1,0 +1,67 @@
+[core]
+    editor = nvim
+    pager = less -FRX
+
+[init]
+    defaultBranch = main
+
+[push]
+    default = current
+    autoSetupRemote = true
+
+[pull]
+    rebase = false
+
+[fetch]
+    prune = true
+
+[merge]
+    conflictstyle = zdiff3
+
+[diff]
+    algorithm = histogram
+    colorMoved = zebra
+
+[rerere]
+    enabled = true
+    autoupdate = true
+
+[color]
+    ui = auto
+
+[help]
+    autocorrect = prompt
+
+[credential]
+    helper = /usr/lib/git-core/git-credential-libsecret
+
+[log]
+    decorate = short
+
+[status]
+    showUntrackedFiles = all
+    branch = true
+
+[alias]
+    st = status
+    co = checkout
+    sw = switch
+    br = branch
+    ci = commit
+    cm = commit -m
+    amend = commit --amend
+    unstage = restore --staged
+    undo = reset HEAD~1
+    last = log -1 HEAD
+    lg = log --oneline --decorate --graph --all
+    ll = log --oneline --decorate
+    recent = log --oneline --decorate -20
+    branches = branch -a
+    remotes = remote -v
+    contributors = shortlog -sn --all --no-merges
+    cleanup = fetch --prune
+    sync = !git pull --rebase && git push
+    root = rev-parse --show-toplevel
+[user]
+	name = Varun Koranne
+	email = korannevarun@gmail.com
